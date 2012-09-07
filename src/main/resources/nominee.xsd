@@ -1,0 +1,120 @@
+<xsd:schema targetNamespace="http://marklogic.com/wikipedia" attributeFormDefault="unqualified" elementFormDefault="qualified" version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="nominee">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="name">
+          <xsd:complexType>
+            <xsd:attribute name="link" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="person">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="oscar">
+                <xsd:complexType>
+                  <xsd:attribute name="year" type="xsd:int" />
+                  <xsd:attribute name="span" type="xsd:int" />
+                  <xsd:attribute name="winner" type="xsd:boolean" />
+                  <xsd:attribute name="award" type="xsd:string" />
+                  <xsd:attribute name="film-link" type="xsd:string" />
+                  <xsd:attribute name="film-title" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="birth">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="date" type="xsd:dateTime" />
+                    <xsd:element name="place">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="primary">
+                            <xsd:complexType>
+                              <xsd:attribute name="link" type="xsd:string" />
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="secondary">
+                            <xsd:complexType>
+                              <xsd:attribute name="link" type="xsd:string" />
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="description">
+                <xsd:complexType mixed="true">
+                  <xsd:sequence>
+                    <xsd:element name="abstract" type="xsd:string" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="link" type="xsd:string" />
+            <xsd:attribute name="name" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="film-title">
+          <xsd:complexType>
+            <xsd:attribute name="link" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="film">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="oscar-ref">
+                <xsd:complexType>
+                  <xsd:attribute name="year" type="xsd:int" />
+                  <xsd:attribute name="span" type="xsd:int" />
+                  <xsd:attribute name="winner" type="xsd:boolean" />
+                  <xsd:attribute name="award" type="xsd:string" />
+                  <xsd:attribute name="person-link" type="xsd:string" />
+                  <xsd:attribute name="person-name" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="producer">
+                <xsd:complexType>
+                  <xsd:attribute name="link" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="director">
+                <xsd:complexType>
+                  <xsd:attribute name="link" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="writer">
+                <xsd:complexType>
+                  <xsd:attribute name="link" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="distributor">
+                <xsd:complexType>
+                  <xsd:attribute name="link" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="starring">
+                <xsd:complexType>
+                  <xsd:attribute name="link" type="xsd:string" />
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="description">
+                <xsd:complexType mixed="true">
+                  <xsd:sequence>
+                    <xsd:element name="abstract" type="xsd:string" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="link" type="xsd:string" />
+            <xsd:attribute name="title" type="xsd:string" />
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+      <xsd:attribute name="year" type="xsd:int" />
+      <xsd:attribute name="span" type="xsd:int" />
+      <xsd:attribute name="winner" type="xsd:boolean" />
+      <xsd:attribute name="award" type="xsd:string" />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

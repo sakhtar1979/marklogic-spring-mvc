@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="authenticationType" class="com.marklogic.client.DatabaseClientFactory.Authentication" factory-method="valueOf">
+		<constructor-arg value="DIGEST"/>
+	</bean>
+	
+	<bean id="databaseClientFactory" class="com.marklogic.client.DatabaseClientFactory" factory-method="newClient">
+		<constructor-arg type="java.lang.String" value="localhost" index="0"/>
+		<constructor-arg type="int" value="8011" index="1"/>
+		<constructor-arg type="java.lang.String" value="admin" index="2"/>
+		<constructor-arg type="java.lang.String" value="admin" index="3"/>
+		<constructor-arg ref="authenticationType" index="4"/>
+	</bean>
+	
+	<bean id="queryManager"  class="com.marklogic.client.query.QueryManager" factory-bean="databaseClientFactory" factory-method="newQueryManager"/>
+	<bean id="serverConfigManager" class="com.marklogic.client.admin.ServerConfigurationManager" factory-bean="databaseClientFactory" factory-method="newServerConfigManager"/>
+	<bean id="queryOptionsManager" class="com.marklogic.client.admin.QueryOptionsManager" factory-bean="serverConfigManager" factory-method="newQueryOptionsManager"/>
+	<bean id="xmlManager" class="com.marklogic.client.document.XMLDocumentManager" factory-bean="databaseClientFactory" factory-method="newXMLDocumentManager"/>
+</beans>
