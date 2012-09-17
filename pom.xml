@@ -177,7 +177,7 @@
 	<repositories>
     <repository>
       <id>dmc</id>
-      <url>http://dmc-stage.marklogic.com/maven2/</url>
+      <url>http://developer.marklogic.com/maven2/</url>
     </repository>
   </repositories>
 </project>
