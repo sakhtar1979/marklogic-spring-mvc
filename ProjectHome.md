@@ -1,0 +1,1 @@
+This is a demo application intended to show how to make use of Spring MVC in combination with MarkLogic and the client-api
